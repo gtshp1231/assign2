@@ -193,16 +193,16 @@ void keyPressed() {
       switch(keyCode)
       {
         case UP:
-          frogY -= 5;
+          frogY -= 32;
           break;
         case DOWN:
-          frogY += 5;
+          frogY += 32;
           break;
         case RIGHT:
-          frogX += 5;
+          frogX += 32;
           break;
         case LEFT:
-          frogX -= 5;
+          frogX -= 32;
           break;
       }
         if (frogX > width - frogW){
@@ -216,7 +216,8 @@ void keyPressed() {
           frogY = 0;
         }
     }
-    if(key==ENTER){
+    if(key==ENTER && (gameState == GAME_LOSE 
+     || gameState == GAME_WIN || gameState == GAME_START)){
       gameState = GAME_RUN;
       life=3;
       frogX = frogInitX;
